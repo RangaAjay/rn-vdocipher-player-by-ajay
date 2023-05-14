@@ -84,7 +84,7 @@ class VideoPlayerView : UIView {
         button.setTitleColor(.black, for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.setTitle("Button", for: .normal)
-        button.backgroundColor=UIColor.red
+//        button.backgroundColor=UIColor.red
         return button
     }()
     
@@ -93,7 +93,7 @@ class VideoPlayerView : UIView {
         button.setTitleColor(.black, for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.setTitle("Button", for: .normal)
-        button.backgroundColor=UIColor.green
+//        button.backgroundColor=UIColor.green
         return button
     }()
     
