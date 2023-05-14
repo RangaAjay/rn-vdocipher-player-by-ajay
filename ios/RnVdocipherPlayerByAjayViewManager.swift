@@ -2,14 +2,14 @@ import Foundation
 
 @objc (VideoPlayerViewManager)
 class VideoPlayerViewManager: RCTViewManager {
- 
-  override static func requiresMainQueueSetup() -> Bool {
-    return false
-  }
-  override func view() -> UIView! {
-    return VideoPlayerView()
-  }
- 
+    
+    override static func requiresMainQueueSetup() -> Bool {
+        return false
+    }
+    override func view() -> UIView! {
+        return VideoPlayerView()
+    }
+    
 }
 
 
@@ -28,7 +28,6 @@ class VideoPlayerView : UIView {
         self.addSubview(valueLabel)
         self.addSubview(buttonsView)
         
-        // buttonsView 위치 설정
         buttonsView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8)
             .isActive = true
         buttonsView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
@@ -38,7 +37,6 @@ class VideoPlayerView : UIView {
         buttonsView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8)
             .isActive = true
         
-        // buttonView에 버튼 추가
         buttonsView.addArrangedSubview(leftButton)
         buttonsView.addArrangedSubview(rightButton)
         
@@ -86,7 +84,7 @@ class VideoPlayerView : UIView {
         button.setTitleColor(.black, for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.setTitle("Button", for: .normal)
-//        button.backgroundColor=UIColor.red
+        button.backgroundColor=UIColor.red
         return button
     }()
     
@@ -95,7 +93,7 @@ class VideoPlayerView : UIView {
         button.setTitleColor(.black, for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.setTitle("Button", for: .normal)
-//        button.backgroundColor=UIColor.green
+        button.backgroundColor=UIColor.green
         return button
     }()
     
@@ -127,7 +125,6 @@ class VideoPlayerView : UIView {
             return
         }
         let event = ["message": "hello world"]
-        // JS에서의 결과: { message: 'hello world' }
         onPressRightButton!(event)
     }
 }
