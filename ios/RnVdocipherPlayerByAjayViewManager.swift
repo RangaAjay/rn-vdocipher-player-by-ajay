@@ -1,36 +1,133 @@
-@objc(RnVdocipherPlayerByAjayViewManager)
-class RnVdocipherPlayerByAjayViewManager: RCTViewManager {
+import Foundation
 
-  override func view() -> (RnVdocipherPlayerByAjayView) {
-    return RnVdocipherPlayerByAjayView()
-  }
-
-  @objc override static func requiresMainQueueSetup() -> Bool {
+@objc (VideoPlayerViewManager)
+class VideoPlayerViewManager: RCTViewManager {
+ 
+  override static func requiresMainQueueSetup() -> Bool {
     return false
   }
+  override func view() -> UIView! {
+    return VideoPlayerView()
+  }
+ 
 }
 
-class RnVdocipherPlayerByAjayView : UIView {
 
-  @objc var color: String = "" {
-    didSet {
-      self.backgroundColor = hexStringToUIColor(hexColor: color)
+class VideoPlayerView : UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
     }
-  }
-
-  func hexStringToUIColor(hexColor: String) -> UIColor {
-    let stringScanner = Scanner(string: hexColor)
-
-    if(hexColor.hasPrefix("#")) {
-      stringScanner.scanLocation = 1
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupView()
     }
-    var color: UInt32 = 0
-    stringScanner.scanHexInt32(&color)
-
-    let r = CGFloat(Int(color >> 16) & 0x000000FF)
-    let g = CGFloat(Int(color >> 8) & 0x000000FF)
-    let b = CGFloat(Int(color) & 0x000000FF)
-
-    return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1)
-  }
+    
+    private func setupView() {
+        self.addSubview(valueLabel)
+        self.addSubview(buttonsView)
+        
+        // buttonsView 위치 설정
+        buttonsView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8)
+            .isActive = true
+        buttonsView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
+            .isActive = true
+        buttonsView.heightAnchor.constraint(equalToConstant: 48)
+            .isActive = true
+        buttonsView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8)
+            .isActive = true
+        
+        // buttonView에 버튼 추가
+        buttonsView.addArrangedSubview(leftButton)
+        buttonsView.addArrangedSubview(rightButton)
+        
+        setupEvents()
+    }
+    
+    private func setupEvents() {
+        let leftButtonTap = UITapGestureRecognizer(
+            target: self,
+            action: #selector(pressLeftButton)
+        )
+        leftButton.addGestureRecognizer(leftButtonTap)
+        
+        let rightButtonTap = UITapGestureRecognizer(
+            target: self,
+            action: #selector(pressRightButton)
+        )
+        rightButton.addGestureRecognizer(rightButtonTap)
+    }
+    
+    
+    
+    let valueLabel: UILabel = {
+        let label = UILabel()
+        label.text = "0"
+        label.textAlignment = .center
+        label.font = label.font.withSize(36)
+        label.textColor=UIColor.red
+        label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return label
+    }()
+    
+    let buttonsView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.distribution = .fillEqually
+        view.spacing = 16
+        view.alignment = .fill
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let leftButton: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.gray, for: .highlighted)
+        button.setTitle("Button", for: .normal)
+//        button.backgroundColor=UIColor.red
+        return button
+    }()
+    
+    let rightButton: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.gray, for: .highlighted)
+        button.setTitle("Button", for: .normal)
+//        button.backgroundColor=UIColor.green
+        return button
+    }()
+    
+    @objc func setValue(_ val: NSNumber) {
+        valueLabel.text = val.stringValue
+    }
+    
+    @objc func setLeftButtonText(_ val: NSString) {
+        leftButton.setTitle(val as String, for: .normal)
+    }
+    
+    @objc func setRightButtonText(_ val: NSString) {
+        rightButton.setTitle(val as String, for: .normal)
+    }
+    
+    @objc var onPressLeftButton: RCTDirectEventBlock?
+    @objc var onPressRightButton: RCTDirectEventBlock?
+    
+    @objc func pressLeftButton(sender: UIButton) {
+        if onPressLeftButton == nil {
+            return
+        }
+        let event = [AnyHashable: Any]()
+        onPressLeftButton!(event)
+    }
+    
+    @objc func pressRightButton(sender: UIButton) {
+        if onPressRightButton == nil {
+            return
+        }
+        let event = ["message": "hello world"]
+        // JS에서의 결과: { message: 'hello world' }
+        onPressRightButton!(event)
+    }
 }

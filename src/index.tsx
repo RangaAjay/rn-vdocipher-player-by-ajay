@@ -2,7 +2,7 @@ import {
   requireNativeComponent,
   UIManager,
   Platform,
-  ViewStyle,
+  // ViewStyle,
 } from 'react-native';
 
 const LINKING_ERROR =
@@ -11,16 +11,16 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-type RnVdocipherPlayerByAjayProps = {
-  color: string;
-  style: ViewStyle;
-};
+// type RnVdocipherPlayerByAjayProps = {
+//   color: string;
+//   style: ViewStyle;
+// };
 
-const ComponentName = 'RnVdocipherPlayerByAjayView';
+const ComponentName = 'VideoPlayerView';
 
 export const RnVdocipherPlayerByAjayView =
   UIManager.getViewManagerConfig(ComponentName) != null
-    ? requireNativeComponent<RnVdocipherPlayerByAjayProps>(ComponentName)
+    ? requireNativeComponent<any>(ComponentName)
     : () => {
         throw new Error(LINKING_ERROR);
       };

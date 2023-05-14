@@ -4,9 +4,18 @@ import { StyleSheet, View } from 'react-native';
 import { RnVdocipherPlayerByAjayView } from 'rn-vdocipher-player-by-ajay';
 
 export default function App() {
+  const [counter, setCounter] = React.useState<number>(0);
   return (
     <View style={styles.container}>
-      <RnVdocipherPlayerByAjayView color="#32a852" style={styles.box} />
+      <RnVdocipherPlayerByAjayView
+        color="black"
+        style={styles.box}
+        value={counter}
+        leftButtonText={'Minus'}
+        rightButtonText={'Plus'}
+        onPressLeftButton={() => setCounter(counter - 1)}
+        onPressRightButton={() => setCounter(counter + 1)}
+      />
     </View>
   );
 }
@@ -18,7 +27,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    width: 60,
+    width: '100%',
     height: 60,
     marginVertical: 20,
   },
