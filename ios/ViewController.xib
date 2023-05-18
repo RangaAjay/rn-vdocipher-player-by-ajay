@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment version="4640" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="rn_vdocipher_player_by_ajay">
+            <connections>
+                <outlet property="container" destination="k75-4A-m00" id="iZb-Yt-8oE"/>
+                <outlet property="downloadActionButton" destination="ZOl-gC-NzS" id="85f-XI-RuY"/>
+                <outlet property="downloadStateLabel" destination="vKI-aO-DGy" id="Egi-Wr-DRH"/>
+                <outlet property="playOfflineButton" destination="8ng-RX-J0q" id="M7c-De-FnB"/>
+                <outlet property="playOnlineButton" destination="2FX-4V-irA" id="TM0-cG-U6u"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k75-4A-m00" userLabel="container">
+                    <rect key="frame" x="0.0" y="59" width="393" height="250"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="xzR-Eq-ihy"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FX-4V-irA" userLabel="playOnlineButton">
+                    <rect key="frame" x="50.000000000000007" y="339" width="108.66666666666669" height="35"/>
+                    <color key="backgroundColor" systemColor="linkColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Play Online">
+                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="playOnline:" destination="-1" eventType="touchUpInside" id="yFN-Gj-Hbs"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ng-RX-J0q" userLabel="playOfflineButton">
+                    <rect key="frame" x="232" y="339" width="111" height="35"/>
+                    <color key="backgroundColor" systemColor="linkColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Play Offline">
+                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="playOffline:" destination="-1" eventType="touchUpInside" id="1Yk-3s-O7q"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOl-gC-NzS" userLabel="downloadActionButton">
+                    <rect key="frame" x="140" y="414" width="113" height="35"/>
+                    <color key="backgroundColor" systemColor="linkColor"/>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Download">
+                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="downloadAction:" destination="-1" eventType="touchUpInside" id="a2j-2X-Zeb"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKI-aO-DGy" userLabel="downloadStateLabel">
+                    <rect key="frame" x="0.0" y="499" width="393" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vKI-aO-DGy" secondAttribute="trailing" id="3CG-3K-9FG"/>
+                <constraint firstItem="k75-4A-m00" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EEH-Gx-94b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8ng-RX-J0q" secondAttribute="trailing" constant="50" id="M1j-ON-wQ6"/>
+                <constraint firstItem="2FX-4V-irA" firstAttribute="top" secondItem="k75-4A-m00" secondAttribute="bottom" constant="30" id="RRE-3r-b3a"/>
+                <constraint firstItem="k75-4A-m00" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SXN-vE-lqi"/>
+                <constraint firstItem="k75-4A-m00" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="a7S-W0-Vlg"/>
+                <constraint firstItem="vKI-aO-DGy" firstAttribute="top" secondItem="ZOl-gC-NzS" secondAttribute="bottom" constant="50" id="dKy-iJ-7rM"/>
+                <constraint firstItem="vKI-aO-DGy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eik-xV-DIe"/>
+                <constraint firstItem="8ng-RX-J0q" firstAttribute="top" secondItem="k75-4A-m00" secondAttribute="bottom" constant="30" id="hRO-FF-WYC"/>
+                <constraint firstItem="2FX-4V-irA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="mGE-PO-QWD"/>
+                <constraint firstItem="ZOl-gC-NzS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="140" id="npj-j3-buC"/>
+                <constraint firstItem="ZOl-gC-NzS" firstAttribute="top" secondItem="2FX-4V-irA" secondAttribute="bottom" constant="40" id="qQn-Ag-9hF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZOl-gC-NzS" secondAttribute="trailing" constant="140" id="yIL-Ue-nPo"/>
+            </constraints>
+            <point key="canvasLocation" x="43.511450381679388" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

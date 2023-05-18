@@ -173,48 +173,6 @@ class ViewController: UIViewController, AssetPlaybackDelegate {
         }
         
     }
-    
-//    let valueLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "Download Status"
-//        label.textAlignment = .center
-//        label.font = label.font.withSize(36)
-//        label.textColor=UIColor.red
-//        label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        return label
-//    }()
-    
-//    let container: UIStackView = {
-//        let view = UIStackView()
-//        view.axis = .vertical
-//        view.distribution = .fillEqually
-//        view.spacing = 8
-//        view.alignment = .fill
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.layer.borderWidth = 2
-//        if #available(iOS 13.0, *) {
-//            view.layer.borderColor = CGColor(red: 252, green: 3, blue: 244, alpha: 1)
-//        }
-//        return view
-//    }()
-//
-//    let btn1: UIButton = {
-//        let button = UIButton()
-//        button.setTitleColor(.black, for: .normal)
-//        button.setTitleColor(.gray, for: .highlighted)
-//        button.setTitle("Play", for: .normal)
-//        button.backgroundColor=UIColor.red
-//        return button
-//    }()
-//
-//    let btn2: UIButton = {
-//        let button = UIButton()
-//        button.setTitleColor(.black, for: .normal)
-//        button.setTitleColor(.gray, for: .highlighted)
-//        button.setTitle("Download", for: .normal)
-//        button.backgroundColor=UIColor.green
-//        return button
-//    }()
 }
 
 extension ViewController {

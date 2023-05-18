@@ -16,8 +16,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   box: {
-    width: '100%',
+    width: 300,
     height: 600,
-    backgroundColor: 'skyblue',
+    borderWidth: 2,
+    // backgroundColor: 'skyblue',
   },
 });
