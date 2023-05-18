@@ -41,13 +41,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/ajayranga/rn-vdocipher-player-by-ajay",
-  "author": "Ajay <ajay.ranga.mr.unique@gmail.com> (https://github.com/ajayranga)",
+  "repository": "https://github.com/ajayhcode/rn-vdocipher-player-by-ajay",
+  "author": "Ajay <ajay.ranga@hcode.tech> (https://github.com/ajayhcode)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ajayranga/rn-vdocipher-player-by-ajay/issues"
+    "url": "https://github.com/ajayhcode/rn-vdocipher-player-by-ajay/issues"
   },
-  "homepage": "https://github.com/ajayranga/rn-vdocipher-player-by-ajay#readme",
+  "homepage": "https://github.com/ajayhcode/rn-vdocipher-player-by-ajay#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
