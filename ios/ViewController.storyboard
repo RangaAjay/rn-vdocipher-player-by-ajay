@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ViewController" customModule="rn_vdocipher_player_by_ajay" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jg-Zo-2Qf" userLabel="container">
+                                <rect key="frame" x="0.0" y="59" width="393" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="w7k-mg-3nw"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHr-s9-PIp">
+                                <rect key="frame" x="40" y="349" width="109" height="35"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play Online"/>
+                                <connections>
+                                    <action selector="playOnline:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XxS-FM-9sC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCb-B4-r4e">
+                                <rect key="frame" x="242.33333333333334" y="349" width="110.66666666666666" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play Offline"/>
+                                <connections>
+                                    <action selector="playOffline:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="300-5s-MK3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orv-Et-xAS">
+                                <rect key="frame" x="40" y="424" width="313" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Download"/>
+                                <connections>
+                                    <action selector="downloadAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CZ5-yG-rPK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsw-xO-koU">
+                                <rect key="frame" x="0.0" y="499" width="393" height="25.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3jg-Zo-2Qf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0rk-R0-lQx"/>
+                            <constraint firstItem="3jg-Zo-2Qf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="1Ri-mi-Beb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lsw-xO-koU" secondAttribute="trailing" id="4Ia-jr-P70"/>
+                            <constraint firstItem="QHr-s9-PIp" firstAttribute="top" secondItem="3jg-Zo-2Qf" secondAttribute="bottom" constant="40" id="5UG-JW-vAg"/>
+                            <constraint firstItem="lsw-xO-koU" firstAttribute="top" secondItem="orv-Et-xAS" secondAttribute="bottom" constant="40" id="BeI-0u-Slv"/>
+                            <constraint firstItem="lsw-xO-koU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="FmQ-Tj-DGk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="orv-Et-xAS" secondAttribute="trailing" constant="40" id="GdO-b3-cH0"/>
+                            <constraint firstItem="3jg-Zo-2Qf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Nb4-Ui-Fed"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zCb-B4-r4e" secondAttribute="trailing" constant="40" id="ROK-gE-c5q"/>
+                            <constraint firstItem="orv-Et-xAS" firstAttribute="top" secondItem="QHr-s9-PIp" secondAttribute="bottom" constant="40" id="YTB-Rc-F5e"/>
+                            <constraint firstItem="orv-Et-xAS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="hc9-pP-XfH"/>
+                            <constraint firstItem="zCb-B4-r4e" firstAttribute="top" secondItem="3jg-Zo-2Qf" secondAttribute="bottom" constant="40" id="r8p-sd-P2g"/>
+                            <constraint firstItem="QHr-s9-PIp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="smo-fz-sY4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="container" destination="3jg-Zo-2Qf" id="xnk-WA-CiZ"/>
+                        <outlet property="downloadActionButton" destination="orv-Et-xAS" id="mLv-9l-9b5"/>
+                        <outlet property="downloadStateLabel" destination="lsw-xO-koU" id="Cug-JN-NM7"/>
+                        <outlet property="playOfflineButton" destination="zCb-B4-r4e" id="YsD-AV-dUN"/>
+                        <outlet property="playOnlineButton" destination="QHr-s9-PIp" id="kF5-xK-a3Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
