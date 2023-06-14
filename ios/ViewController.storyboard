@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,25 +26,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHr-s9-PIp">
                                 <rect key="frame" x="40" y="349" width="109" height="35"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Play Online"/>
-                                <connections>
-                                    <action selector="playOnline:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XxS-FM-9sC"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCb-B4-r4e">
                                 <rect key="frame" x="242.33333333333334" y="349" width="110.66666666666666" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Play Offline"/>
-                                <connections>
-                                    <action selector="playOffline:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="300-5s-MK3"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orv-Et-xAS">
                                 <rect key="frame" x="40" y="424" width="313" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Download"/>
-                                <connections>
-                                    <action selector="downloadAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CZ5-yG-rPK"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsw-xO-koU">
                                 <rect key="frame" x="0.0" y="499" width="393" height="25.333333333333371"/>
@@ -72,11 +63,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="container" destination="3jg-Zo-2Qf" id="xnk-WA-CiZ"/>
-                        <outlet property="downloadActionButton" destination="orv-Et-xAS" id="mLv-9l-9b5"/>
-                        <outlet property="downloadStateLabel" destination="lsw-xO-koU" id="Cug-JN-NM7"/>
-                        <outlet property="playOfflineButton" destination="zCb-B4-r4e" id="YsD-AV-dUN"/>
-                        <outlet property="playOnlineButton" destination="QHr-s9-PIp" id="kF5-xK-a3Y"/>
+                        <outlet property="container" destination="3jg-Zo-2Qf" id="boG-lu-9vu"/>
+                        <outlet property="downloadActionButton" destination="orv-Et-xAS" id="Luq-TS-Qm6"/>
+                        <outlet property="downloadStateLabel" destination="lsw-xO-koU" id="q2d-tW-Lwe"/>
+                        <outlet property="playOfflineButton" destination="zCb-B4-r4e" id="AXH-We-9K0"/>
+                        <outlet property="playOnlineButton" destination="QHr-s9-PIp" id="Are-6F-zxu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
